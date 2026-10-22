@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Faculty Hiring Benchmark</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+  <div class="topbar">
+    <div class="brand"><div class="logo"></div><span>FACULTY HIRING // BENCHMARK.EXE</span></div>
+    <div class="window-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-main">
+      <span class="kicker">India · 2022–2026 primary window</span>
+      <h1><span class="orange">FACULTY</span><br><span class="teal">BENCHMARK</span></h1>
+      <div class="hero-copy">
+        Recent robotics, control, autonomy and mechanical-systems faculty hiring across major IITs and IISc.
+        Historical metrics are kept separate from current metrics so the comparison stays useful instead of artificially inflated.
+      </div>
+      <div class="legend">
+        <span class="badge">FULL JOURNAL = 1.0</span>
+        <span class="badge">RA-L / LETTER = 0.5</span>
+        <span class="badge">CONFERENCES = SEPARATE</span>
+        <span class="badge">ESTIMATES ARE LABELED</span>
+      </div>
+    </div>
+    <aside class="hero-side">
+      <h2>Scoring rule</h2><div class="rule"></div>
+      <div class="formula">JE = Full Journals<br>+ 0.5 × Letters</div>
+      <p class="small"><b>Historical citations:</b> dated value if available; otherwise a reconstructed range or “not publicly recoverable.” No fake precision.</p>
+    </aside>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><div class="num" id="np">0</div><div class="label">Visible profiles</div></div>
+    <div class="stat"><div class="num" id="ni">0</div><div class="label">Institutes</div></div>
+    <div class="stat"><div class="num" id="robot">0</div><div class="label">Robotics / control</div></div>
+    <div class="stat"><div class="num" id="nr">0</div><div class="label">Estimated ranges</div></div>
+    <div class="stat"><div class="num" id="nna">0</div><div class="label">Not recoverable</div></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div class="panel-title">
+        <div class="icon-square">Σ</div>
+        <div>
+          <div class="section-title">Institute-level hiring averages</div>
+          <div class="small">Mean ± sample SD at the time of hiring. N shows how many faculty had a usable value for that metric.</div>
+        </div>
+      </div>
+    </div>
+    <div class="summary-table-wrap">
+      <table class="summary-table">
+        <thead><tr>
+          <th>Institute</th>
+          <th>Faculty in cohort</th>
+          <th>Conference papers</th>
+          <th>Full journals</th>
+          <th>Total papers</th>
+          <th>Citations @ hiring</th>
+          <th>Postdoc years</th>
+        </tr></thead>
+        <tbody id="summaryBody"></tbody>
+      </table>
+    </div>
+    <div class="summary-note">
+      <b>How calculated:</b> numeric ranges are converted to their midpoint; open-ended values such as “40+” use the conservative lower bound 40.
+      Sample SD is used. “Postdoc years” counts formal postdoctoral/research-associate training after the PhD and before the appointment; industry R&amp;D is not counted as postdoc time.
+      If a historical citation count is not publicly recoverable, that person is excluded from the citation average and the displayed N decreases accordingly.
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div class="panel-title"><div class="icon-square">⌕</div><div><div class="section-title">Browse the cohort</div><div class="small">Click an institute chip or combine the filters.</div></div></div>
+      <div class="institute-chips" id="chips"></div>
+    </div>
+    <div class="filters">
+      <input id="q" placeholder="Search person, area, venue, lab, institute…">
+      <select id="college"><option value="">All institutes</option></select>
+      <select id="dept"><option value="">All departments</option></select>
+      <select id="category"><option value="">All categories</option></select>
+      <select id="route"><option value="">All hiring routes</option></select>
+    </div>
+    <div class="toolbar">
+      <button class="btn" onclick="csv()">Export CSV</button>
+      <button class="btn secondary" onclick="jsn()">Export JSON</button>
+      <button class="btn ghost" onclick="clearFilters()">Clear filters</button>
+    </div>
+
+    <div class="table-window">
+      <div class="table-titlebar">
+        <span>▣ FACULTY_RECORDS.DAT</span><span id="visibleLabel">0 records</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>Name</th><th>Institute</th><th>Department</th><th>Joined</th><th>Route</th><th>Previous position</th>
+            <th>PhD</th><th>Years post-PhD</th><th>Papers @ hiring</th><th>Full journals</th><th>RA-L / letters</th>
+            <th>Journal-equiv.</th><th>Conferences</th><th>Citations @ hiring</th><th>Current / nearest metrics</th>
+            <th>Recent research focus</th><th>Strong signals</th><th>Confidence</th><th>Audit note</th><th>Source</th>
+          </tr></thead>
+          <tbody id="tb"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="audit">
+      <b>ABOUT THE AUDIT.</b> “Not publicly recoverable” is a finished result, not a missing task.
+      It means no dated public source justifies a historical citation count. Reconstructed values are deliberately shown as ranges.
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>FACULTY BENCHMARK // RESEARCH TOOL</span>
+    <span>ROBOTS · MECHANICS · CONTROL · AUTONOMY</span>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
