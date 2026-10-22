@@ -44,24 +44,32 @@ This project is **not a hiring-probability predictor**. Hiring also depends on d
 ```text
 faculty-hiring-benchmark/
 ├── index.html
+├── styles.css
+├── app.js
 ├── README.md
 ├── ROADMAP.md
 ├── data/
-│   ├── faculty.json
-│   └── institute_summary.json
-├── docs/
-│   ├── METHODOLOGY.md
-│   └── DATA_SCHEMA.md
-└── src/
-    └── README.md
+│   ├── manifest.json
+│   ├── institute_summary.json
+│   └── institutes/
+│       ├── iit-bombay.json
+│       ├── iisc-bengaluru.json
+│       ├── iit-delhi.json
+│       └── ...
+└── docs/
+    ├── METHODOLOGY.md
+    └── DATA_SCHEMA.md
 ```
+
+The faculty dataset is split by institute so individual colleges can be updated without editing a large monolithic file. `data/manifest.json` tells the frontend which institute files to load.
 
 ## Quick deployment with GitHub Pages
 
-1. Push this repository to GitHub.
-2. Open **Settings → Pages**.
-3. Deploy from the `main` branch and `/ (root)`.
-4. The site will serve `index.html`.
+1. Open **Settings → Pages** in this repository.
+2. Under **Build and deployment**, choose **Deploy from a branch**.
+3. Select `main` and `/ (root)`.
+4. Save.
+5. GitHub Pages will serve `index.html`.
 
 ## Current status
 
