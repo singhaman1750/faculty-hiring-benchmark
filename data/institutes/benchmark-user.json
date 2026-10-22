@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Aman Singh",
+    "college": "Benchmark / User",
+    "department": "Robotics / Mechanical",
+    "joined": "Current PhD",
+    "route": "PhD candidate",
+    "previous": "PhD, IISc Bengaluru",
+    "phd": "IISc Bengaluru (ongoing)",
+    "years_after_phd": "—",
+    "papers": "8 accepted/published conferences",
+    "full_journals": "0 accepted",
+    "letters": "0 accepted; 1 RA-L under revision",
+    "journal_equiv": "0 accepted",
+    "conferences": "8",
+    "citations": "Early career",
+    "current_metrics": "Public databases incomplete/stale",
+    "area": "Robotic actuator design; planetary gearboxes; legged-robot hardware; actuator-aware co-design",
+    "signals": "ICRA; IROS; Humanoids; AIM; hardware + automated design identity",
+    "category": "Personal benchmark",
+    "confidence": "High",
+    "source": "https://aman-singh.in/",
+    "audit_note": "Near-date or directly documented value where available.",
+    "postdoc_years": null
+  }
+]
