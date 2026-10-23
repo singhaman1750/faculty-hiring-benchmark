@@ -43,5 +43,15 @@
     "institute": "IIT Roorkee",
     "file": "data/institutes/iit-roorkee.json",
     "count": 3
+  },
+  {
+    "institute": "Historical verified expansion",
+    "file": "data/verified_2016_2021_expansion.json",
+    "count": 20
+  },
+  {
+    "institute": "IIT Madras historical",
+    "file": "data/institutes/iit-madras-historical.json",
+    "count": 1
   }
 ]
