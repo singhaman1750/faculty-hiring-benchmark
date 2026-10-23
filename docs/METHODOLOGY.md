@@ -1,7 +1,7 @@
 # Methodology
 
 ## Scope
-Current verified/curated window: **2016–2026**.
+Current curated window: **2016–2026**.
 
 Users can select any starting year from 2016 onward. All visible records and institute-level statistics are recalculated for the selected cohort.
 
@@ -18,31 +18,66 @@ Current emphasis:
 
 This is a curated benchmark cohort, **not yet an exhaustive census of every faculty hire in every department**.
 
-## Publication counting
+## Publication categories
+Every faculty profile is audited into exactly three publication buckets at the time of hiring.
 
-### Full journals
-Count as **1.0** in the journal-equivalent score.
+### 1. Full archival journals
+Examples include T-RO, IJRR, Automatica, IEEE Transactions journals, Journal of Fluid Mechanics, JMPS, etc.
 
-### RA-L / short letters
-Count as **0.5** in the journal-equivalent score.
+These count as **1.0** in the journal-equivalent score.
 
-### Conferences
-Tracked separately.
+### 2. Letters
+This bucket includes short/letter-style archival venues such as:
+- IEEE Robotics and Automation Letters (RA-L)
+- IEEE Control Systems Letters (L-CSS)
+- other clearly short-letter-style archival venues when applicable
+
+These count as **0.5** in the journal-equivalent score.
+
+RA-L and L-CSS are **not** included again in the full-journal count.
+
+### 3. Conference papers
+Peer-reviewed conference proceedings are counted separately. Examples include ICRA, IROS, RSS, CoRL, CDC, ACC, HSCC, WAFR, etc.
+
+Workshops, posters, theses, patents, invited talks, book chapters, preprints and non-peer-reviewed publication objects are not silently mixed into the conference count.
+
+## Publication audit status
+Every row has a separate publication-audit source and status.
+
+### Verified
+Used only when a sufficiently complete, dated publication list/CV allows the hiring-time split to be counted directly with high confidence.
+
+### Reconstructed
+Used when the hiring-time split is supported by dated publication chronology but the public record is incomplete or the appointment cutoff requires reconstruction. These values are shown as ranges where appropriate.
+
+A reconstructed range is intentionally **not presented as an exact count**.
+
+## Derived publication metrics
+The website does not independently enter a total-publication count for the audited view.
+
+Instead:
+
+```text
+Total peer-reviewed = Full journals + Letters + Conference papers
+```
+
+and
+
+```text
+Journal-equivalent (JE) = Full journals + 0.5 × Letters
+```
+
+This prevents internal contradictions between separate manually entered totals.
 
 ## Time-of-hiring reconstruction
-The aim is to estimate the profile that existed approximately when the person joined the institution, not merely report current metrics.
+The target is the profile that existed approximately when the person joined the institution, not their current profile.
 
 Source priority:
-1. official institute/faculty page or annual/NIRF record
-2. personal CV/publication page
-3. dated seminar biography or archived profile
-4. Google Scholar / OpenAlex / Semantic Scholar / ORCID / Crossref
-5. other public bibliographic sources
-
-## Historical coverage
-For the 2016–2021 expansion, appointment dates and career paths are included only when they can be supported by public institutional/CV evidence.
-
-Historical publication and citation totals are deliberately left unavailable when a defensible appointment-date reconstruction cannot be made.
+1. complete personal CV / publication page with dates
+2. official institute/faculty publication page
+3. archived or dated institutional profile / annual report
+4. author-disambiguated bibliographic records
+5. current bibliographic profile used only to help reconstruct older chronology, never silently substituted for historical counts
 
 ## Citations
 Historical citation values are labeled as:
@@ -55,12 +90,11 @@ Current citations must not silently replace historical values.
 ## Institute statistics
 Statistics are computed dynamically from the current filtered cohort.
 
-- numeric ranges use their midpoint
-- open-ended values such as `40+` use the lower bound conservatively
-- phrases such as `at least 5` use 5 as a conservative lower bound
+- publication ranges use their midpoint only for aggregate statistics
 - sample SD is used
 - unavailable metrics are excluded from that metric's mean/SD
 - N used is displayed per metric
+- full journals, letters, and conferences are aggregated separately
 
 This means different metrics for the same institute can have different N values.
 
