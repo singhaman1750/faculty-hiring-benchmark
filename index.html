@@ -15,16 +15,16 @@
 
   <section class="hero">
     <div class="hero-main">
-      <span class="kicker">India · 2022–2026 primary window</span>
+      <span class="kicker">India · verified cohort · 2016–2026</span>
       <h1><span class="orange">FACULTY</span><br><span class="teal">BENCHMARK</span></h1>
       <div class="hero-copy">
-        Recent robotics, control, autonomy and mechanical-systems faculty hiring across major IITs and IISc.
-        Historical metrics are kept separate from current metrics so the comparison stays useful instead of artificially inflated.
+        Explore recent faculty hiring profiles in robotics, control, autonomy and mechanical systems across major IITs and IISc.
+        Select a starting year to compare different hiring windows. Historical metrics are kept separate from current metrics so the comparison stays useful instead of artificially inflated.
       </div>
       <div class="legend">
+        <span class="badge">START YEAR SELECTABLE</span>
         <span class="badge">FULL JOURNAL = 1.0</span>
         <span class="badge">RA-L / LETTER = 0.5</span>
-        <span class="badge">CONFERENCES = SEPARATE</span>
         <span class="badge">ESTIMATES ARE LABELED</span>
       </div>
     </div>
@@ -39,8 +39,8 @@
     <div class="stat"><div class="num" id="np">0</div><div class="label">Visible profiles</div></div>
     <div class="stat"><div class="num" id="ni">0</div><div class="label">Institutes</div></div>
     <div class="stat"><div class="num" id="robot">0</div><div class="label">Robotics / control</div></div>
-    <div class="stat"><div class="num" id="nr">0</div><div class="label">Estimated ranges</div></div>
-    <div class="stat"><div class="num" id="nna">0</div><div class="label">Not recoverable</div></div>
+    <div class="stat"><div class="num" id="nr">0</div><div class="label">Estimated / partial</div></div>
+    <div class="stat"><div class="num" id="nna">0</div><div class="label">Citation unavailable</div></div>
   </section>
 
   <section class="panel">
@@ -49,7 +49,7 @@
         <div class="icon-square">Σ</div>
         <div>
           <div class="section-title">Institute-level hiring averages</div>
-          <div class="small">Mean ± sample SD at the time of hiring. N shows how many faculty had a usable value for that metric.</div>
+          <div class="small">Mean ± sample SD for the current filters and selected window <b id="summaryRange">2016–2026</b>. N shows how many faculty had a usable value for each metric.</div>
         </div>
       </div>
     </div>
@@ -68,27 +68,28 @@
       </table>
     </div>
     <div class="summary-note">
-      <b>How calculated:</b> numeric ranges are converted to their midpoint; open-ended values such as “40+” use the conservative lower bound 40.
+      <b>How calculated:</b> numeric ranges are converted to their midpoint; open-ended or “at least” values use the stated lower bound conservatively.
       Sample SD is used. “Postdoc years” counts formal postdoctoral/research-associate training after the PhD and before the appointment; industry R&amp;D is not counted as postdoc time.
-      If a historical citation count is not publicly recoverable, that person is excluded from the citation average and the displayed N decreases accordingly.
+      If a historical metric is not defensibly recoverable, that person is excluded from that metric’s average and the displayed N decreases accordingly.
     </div>
   </section>
 
   <section class="panel">
     <div class="panel-head">
-      <div class="panel-title"><div class="icon-square">⌕</div><div><div class="section-title">Browse the cohort</div><div class="small">Click an institute chip or combine the filters.</div></div></div>
+      <div class="panel-title"><div class="icon-square">⌕</div><div><div class="section-title">Browse the cohort</div><div class="small">Choose the start year, then combine institute, department, category and route filters.</div></div></div>
       <div class="institute-chips" id="chips"></div>
     </div>
     <div class="filters">
       <input id="q" placeholder="Search person, area, venue, lab, institute…">
+      <select id="startYear" aria-label="Starting year"></select>
       <select id="college"><option value="">All institutes</option></select>
       <select id="dept"><option value="">All departments</option></select>
       <select id="category"><option value="">All categories</option></select>
       <select id="route"><option value="">All hiring routes</option></select>
     </div>
     <div class="toolbar">
-      <button class="btn" onclick="csv()">Export CSV</button>
-      <button class="btn secondary" onclick="jsn()">Export JSON</button>
+      <button class="btn" onclick="csv()">Export filtered CSV</button>
+      <button class="btn secondary" onclick="jsn()">Export filtered JSON</button>
       <button class="btn ghost" onclick="clearFilters()">Clear filters</button>
     </div>
 
@@ -110,14 +111,14 @@
     </div>
 
     <div class="audit">
-      <b>ABOUT THE AUDIT.</b> “Not publicly recoverable” is a finished result, not a missing task.
-      It means no dated public source justifies a historical citation count. Reconstructed values are deliberately shown as ranges.
+      <b>COVERAGE NOTE.</b> The 2016–2026 expansion is a curated, source-verified cohort focused on robotics, control, autonomy, mechanical systems and useful mechanical/optimization comparators; it is not yet an exhaustive census of every faculty hire in every department.
+      Older hiring-time citation/publication snapshots are often unavailable, so missing historical metrics are explicitly marked rather than inferred from today’s totals.
     </div>
   </section>
 
   <footer class="footer">
     <span>FACULTY BENCHMARK // RESEARCH TOOL</span>
-    <span>ROBOTS · MECHANICS · CONTROL · AUTONOMY</span>
+    <span>2016–2026 · ROBOTS · MECHANICS · CONTROL · AUTONOMY</span>
   </footer>
 </div>
 
