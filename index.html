@@ -15,23 +15,23 @@
 
   <section class="hero">
     <div class="hero-main">
-      <span class="kicker">India · audited cohort · 2016–2026</span>
+      <span class="kicker">India · FEPA-audited cohort · 2016–2026</span>
       <h1><span class="orange">FACULTY</span><br><span class="teal">BENCHMARK</span></h1>
       <div class="hero-copy">
         Explore faculty hiring profiles in robotics, control, autonomy and mechanical systems across major IITs and IISc.
-        Publication records are split into three audited buckets: full archival journals, letters, and conference papers.
+        Publication records are split into full archival journals, letters, and conference papers. Exact counts are accepted only after paper-level verification under FEPA.
       </div>
       <div class="legend">
         <span class="badge">FULL JOURNALS</span>
         <span class="badge">LETTERS: RA-L / L-CSS / SHORT LETTERS</span>
         <span class="badge">CONFERENCE PAPERS</span>
-        <span class="badge">VERIFIED / RECONSTRUCTED SHOWN</span>
+        <span class="badge">FEPA VERIFIED / LEGACY RECONSTRUCTED</span>
       </div>
     </div>
     <aside class="hero-side">
-      <h2>Counting rule</h2><div class="rule"></div>
-      <div class="formula">JE = Full Journals<br>+ 0.5 × Letters</div>
-      <p class="small"><b>Verified</b> means counted from a sufficiently complete dated publication list/CV. <b>Reconstructed</b> means a source-backed hiring-time range.</p>
+      <h2>FEPA counting rule</h2><div class="rule"></div>
+      <div class="formula">COUNT PAPERS FIRST<br>DERIVE TOTALS LAST</div>
+      <p class="small"><b>FEPA</b> = Faculty Entry Publication Audit. Institute-by-institute, maximum 6 faculty per audit batch. Google Scholar is used for discovery/cross-checking, not as an aggregate-count authority.</p>
     </aside>
   </section>
 
@@ -44,81 +44,34 @@
   </section>
 
   <section class="panel">
-    <div class="panel-head">
-      <div class="panel-title">
-        <div class="icon-square">Σ</div>
-        <div>
-          <div class="section-title">Institute-level hiring averages</div>
-          <div class="small">Mean ± sample SD for the current filters and selected window <b id="summaryRange">2016–2026</b>. N is shown for every metric.</div>
-        </div>
-      </div>
-    </div>
-    <div class="summary-table-wrap">
-      <table class="summary-table">
-        <thead><tr>
-          <th>Institute</th>
-          <th>Faculty</th>
-          <th>Full journals</th>
-          <th>Letters</th>
-          <th>Conference papers</th>
-          <th>Total peer-reviewed</th>
-          <th>Citations @ hiring</th>
-          <th>Postdoc years</th>
-        </tr></thead>
-        <tbody id="summaryBody"></tbody>
-      </table>
-    </div>
+    <div class="panel-head"><div class="panel-title"><div class="icon-square">✓</div><div><div class="section-title">FEPA — Faculty Entry Publication Audit</div><div class="small">The reproducible audit protocol used for new institutes and re-auditing legacy rows.</div></div></div></div>
     <div class="summary-note">
-      <b>Publication audit:</b> ranges are converted to their midpoint only for the aggregate statistics. Total peer-reviewed papers are derived from the three publication buckets, not entered independently.
-      Full journals exclude RA-L/L-CSS; those are reported in <b>Letters</b>. Reconstructed rows remain visibly labeled and are never presented as exact counts.
+      <b>1.</b> Audit one institute at a time; maximum batch size is <b>6 faculty</b>. &nbsp;
+      <b>2.</b> Establish and source the faculty-entry cutoff first. &nbsp;
+      <b>3.</b> Build the candidate bibliography, then verify papers individually. &nbsp;
+      <b>4.</b> Record title, venue, date, type, author order and first-author status. &nbsp;
+      <b>5.</b> Exclude preprints, workshops, theses, patents and duplicates; do not double-count RA-L/L-CSS conference presentations. &nbsp;
+      <b>6.</b> Derive totals only after the paper list is verified. Cutoff-year uncertainty is explicitly marked ambiguous rather than silently counted.
     </div>
   </section>
 
   <section class="panel">
     <div class="panel-head">
-      <div class="panel-title"><div class="icon-square">⌕</div><div><div class="section-title">Browse the cohort</div><div class="small">Choose the start year, then combine institute, department, category and route filters.</div></div></div>
-      <div class="institute-chips" id="chips"></div>
+      <div class="panel-title"><div class="icon-square">Σ</div><div><div class="section-title">Institute-level hiring averages</div><div class="small">Mean ± sample SD for the current filters and selected window <b id="summaryRange">2016–2026</b>. N is shown for every metric.</div></div></div>
     </div>
-    <div class="filters">
-      <input id="q" placeholder="Search person, area, venue, lab, institute…">
-      <select id="startYear" aria-label="Starting year"></select>
-      <select id="college"><option value="">All institutes</option></select>
-      <select id="dept"><option value="">All departments</option></select>
-      <select id="category"><option value="">All categories</option></select>
-      <select id="route"><option value="">All hiring routes</option></select>
-    </div>
-    <div class="toolbar">
-      <button class="btn" onclick="csv()">Export filtered CSV</button>
-      <button class="btn secondary" onclick="jsn()">Export filtered JSON</button>
-      <button class="btn ghost" onclick="clearFilters()">Clear filters</button>
-    </div>
-
-    <div class="table-window">
-      <div class="table-titlebar">
-        <span>▣ FACULTY_RECORDS.DAT</span><span id="visibleLabel">0 records</span>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr>
-            <th>Name</th><th>Institute</th><th>Department</th><th>Joined</th><th>Route</th><th>Previous position</th>
-            <th>PhD</th><th>Years post-PhD</th><th>Full journals</th><th>Letters</th><th>Conference papers</th>
-            <th>Total peer-reviewed</th><th>Journal-equiv.</th><th>Publication audit</th><th>Publication source</th>
-            <th>Citations @ hiring</th><th>Current / nearest metrics</th><th>Recent research focus</th><th>Strong signals</th><th>Audit note</th><th>Profile source</th>
-          </tr></thead>
-          <tbody id="tb"></tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="audit">
-      <b>RELIABILITY RULE.</b> Every profile has a separate publication audit. “Verified” is reserved for source-backed counts that can be counted directly from a sufficiently complete dated publication list/CV. “Reconstructed” is a conservative range based on dated publication chronology. The source used for the publication split is shown explicitly for every row.
-    </div>
+    <div class="summary-table-wrap"><table class="summary-table"><thead><tr><th>Institute</th><th>Faculty</th><th>Full journals</th><th>Letters</th><th>Conference papers</th><th>Total peer-reviewed</th><th>Citations @ hiring</th><th>Postdoc years</th></tr></thead><tbody id="summaryBody"></tbody></table></div>
+    <div class="summary-note"><b>Publication audit:</b> exact publication totals should be treated as FEPA-grade only after paper-level verification. Legacy reconstructed ranges remain provisional while institutes are re-audited. Total peer-reviewed papers are derived from the three publication buckets.</div>
   </section>
 
-  <footer class="footer">
-    <span>FACULTY BENCHMARK // RESEARCH TOOL</span>
-    <span>2016–2026 · AUDITED PUBLICATION SPLITS</span>
-  </footer>
+  <section class="panel">
+    <div class="panel-head"><div class="panel-title"><div class="icon-square">⌕</div><div><div class="section-title">Browse the cohort</div><div class="small">Choose the start year, then combine institute, department, category and route filters.</div></div></div><div class="institute-chips" id="chips"></div></div>
+    <div class="filters"><input id="q" placeholder="Search person, area, venue, lab, institute…"><select id="startYear" aria-label="Starting year"></select><select id="college"><option value="">All institutes</option></select><select id="dept"><option value="">All departments</option></select><select id="category"><option value="">All categories</option></select><select id="route"><option value="">All hiring routes</option></select></div>
+    <div class="toolbar"><button class="btn" onclick="csv()">Export filtered CSV</button><button class="btn secondary" onclick="jsn()">Export filtered JSON</button><button class="btn ghost" onclick="clearFilters()">Clear filters</button></div>
+    <div class="table-window"><div class="table-titlebar"><span>▣ FACULTY_RECORDS.DAT</span><span id="visibleLabel">0 records</span></div><div class="table-wrap"><table><thead><tr><th>Name</th><th>Institute</th><th>Department</th><th>Joined</th><th>Route</th><th>Previous position</th><th>PhD</th><th>Years post-PhD</th><th>Full journals</th><th>Letters</th><th>Conference papers</th><th>Total peer-reviewed</th><th>Journal-equiv.</th><th>Publication audit</th><th>Publication source</th><th>Citations @ hiring</th><th>Current / nearest metrics</th><th>Recent research focus</th><th>Strong signals</th><th>Audit note</th><th>Profile source</th></tr></thead><tbody id="tb"></tbody></table></div></div>
+    <div class="audit"><b>FEPA RELIABILITY RULE.</b> A count becomes FEPA Verified only after the faculty-entry cutoff and the individual papers have been checked. Older “Verified” or “Reconstructed” labels in the legacy dataset are being re-audited institute-by-institute and should not be interpreted as having completed the new FEPA protocol unless explicitly stated.</div>
+  </section>
+
+  <footer class="footer"><span>FACULTY BENCHMARK // FEPA RESEARCH TOOL</span><span>2016–2026 · PAPER-LEVEL AUDIT PROTOCOL</span></footer>
 </div>
 <script src="app.js"></script>
 </body>
