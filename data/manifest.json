@@ -1,17 +1,15 @@
 [
   {"institute":"Benchmark / User","file":"data/institutes/benchmark-user.json","count":1},
-  {"institute":"IISc Bengaluru","file":"data/institutes/iisc-bengaluru.json","count":2},
-  {"institute":"IIT Bombay","file":"data/institutes/iit-bombay.json","count":8},
-  {"institute":"IIT Delhi","file":"data/institutes/iit-delhi.json","count":4},
-  {"institute":"IIT Gandhinagar","file":"data/institutes/iit-gandhinagar.json","count":4},
+  {"institute":"IISc Bengaluru","file":"data/institutes/iisc-bengaluru.json","count":6},
+  {"institute":"IIT Bombay","file":"data/institutes/iit-bombay.json","count":12},
+  {"institute":"IIT Delhi","file":"data/institutes/iit-delhi.json","count":7},
+  {"institute":"IIT Gandhinagar","file":"data/institutes/iit-gandhinagar.json","count":5},
   {"institute":"IIT Guwahati","file":"data/institutes/iit-guwahati.json","count":5},
   {"institute":"IIT Hyderabad","file":"data/institutes/iit-hyderabad.json","count":4},
   {"institute":"IIT Jodhpur","file":"data/institutes/iit-jodhpur.json","count":5},
-  {"institute":"IIT Kanpur","file":"data/institutes/iit-kanpur.json","count":3},
-  {"institute":"IIT Kharagpur","file":"data/institutes/iit-kharagpur.json","count":2},
-  {"institute":"IIT Madras","file":"data/institutes/iit-madras.json","count":5},
-  {"institute":"IIT Roorkee","file":"data/institutes/iit-roorkee.json","count":3},
-  {"institute":"IIT (BHU) Varanasi","file":"data/institutes/iit-bhu-varanasi.json","count":4},
-  {"institute":"Historical verified expansion","file":"data/verified_2016_2021_expansion.json","count":20},
-  {"institute":"IIT Madras historical","file":"data/institutes/iit-madras-historical.json","count":1}
+  {"institute":"IIT Kanpur","file":"data/institutes/iit-kanpur.json","count":5},
+  {"institute":"IIT Kharagpur","file":"data/institutes/iit-kharagpur.json","count":5},
+  {"institute":"IIT Madras","file":"data/institutes/iit-madras.json","count":6},
+  {"institute":"IIT Roorkee","file":"data/institutes/iit-roorkee.json","count":6},
+  {"institute":"IIT (BHU) Varanasi","file":"data/institutes/iit-bhu-varanasi.json","count":4}
 ]
